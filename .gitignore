@@ -1,48 +1,85 @@
-# See https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
-
-# compiled output
-dist
-tmp
-out-tsc
-
-# dependencies
-node_modules
-
-# IDEs and editors
-/.idea
-.project
-.classpath
-.c9/
-*.launch
-.settings/
-*.sublime-workspace
-
-# IDE - VSCode
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-
-# misc
-/.sass-cache
-/connect.lock
-/coverage
-/libpeerconnection.log
+# ----------------------------------------
+# Node / Yarn
+# ----------------------------------------
+node_modules/
+yarn.lock
 npm-debug.log
-yarn-error.log
-testem.log
-/typings
+yarn-debug.log*
+yarn-error.log*
 
-# System Files
+# Remove if you intend to commit yarn.lock:
+# !yarn.lock
+
+# ----------------------------------------
+# Nx
+# ----------------------------------------
+dist/
+.out/
+.nx/
+tmp/
+
+# ----------------------------------------
+# TypeScript
+# ----------------------------------------
+*.tsbuildinfo
+
+# ----------------------------------------
+# Angular (web)
+# ----------------------------------------
+web/.angular/
+web/.angular/cache/
+
+# Angular build output (usually under dist/apps/web, covered by dist/)
+web/.browser/
+web/.output/
+
+# ----------------------------------------
+# Express backend (api)
+# ----------------------------------------
+api/.output/
+api/logs/
+api/*.log
+
+# SQLite database (store locally, do not commit)
+api/data/*.sqlite
+api/data/*.db
+
+# ----------------------------------------
+# Environment / secrets
+# ----------------------------------------
+*.env
+*.env.local
+*.env.development
+*.env.production
+
+# Prevent committing any secret files anywhere
+**/*.env
+**/*.env.*
+.env*
+
+# ----------------------------------------
+# IDE / OS
+# ----------------------------------------
+.vscode/
+.idea/
+
 .DS_Store
 Thumbs.db
 
-.nx/cache
-.nx/workspace-data
-.cursor/rules/nx-rules.mdc
-.github/instructions/nx.instructions.md
+# Zsh history, macOS shell junk
+*.swp
+*.swo
 
-.angular
+# ----------------------------------------
+# Jest / Playwright
+# ----------------------------------------
+coverage/
+playwright-report/
+test-results/
 
-test-output
+# ----------------------------------------
+# Build artifacts (universal)
+# ----------------------------------------
+*.log
+*.tmp
+*.cache

@@ -1,12 +1,13 @@
 import express from 'express';
 
 import usersRouter from './routes/users';
+import userPasswordRoute from './routes/userPassword';
 
 const app = express();
 
 app.use(express.json());
 
-// Mount so the path is exactly /users/:id
 app.use(usersRouter);
+app.use(userPasswordRoute);
 
 export default app;

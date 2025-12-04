@@ -5,6 +5,9 @@ import userTokenRouter from './routes/userToken';
 import usersRouter from './routes/users';
 import userPasswordRoute from './routes/userPassword';
 import changePasswordRouter from './routes/changePassword';
+import attractions from './routes/attractions';
+import attractionsById from './routes/attractionsById';
+import login from './routes/login';
 
 
 const app = express();
@@ -16,6 +19,9 @@ app.use(usersRouter);
 app.use(userPasswordRoute);
 app.use(changePasswordRouter);
 app.use(userTokenRouter);
+app.use(attractions);
+app.use(attractionsById);
+app.use(login);
 
 const port = process.env.PORT || 3001;
 
